@@ -21,8 +21,12 @@ public class SpiesOnATrain {
      * testimony. Remember to use String methods to break up the passengers'
      * statements.
      */
+	TrainCar traincar;
     String findIntel(LinkedList<TrainCar> train, String[] clues) {
-
+    	String[] splitclues;
+    	for(int i =0; i < train.size(); i++) {
+    		traincar = new TrainCar();
+    	}
         return "";
 
     }
