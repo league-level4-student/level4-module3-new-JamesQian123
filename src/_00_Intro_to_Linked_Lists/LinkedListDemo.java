@@ -41,6 +41,7 @@ public class LinkedListDemo {
     	links.add("a");
     	links.add("linked");
     	links.add("list");
+    	links.get
     	links.print();
     	links.remove(2);
     	links.print();
