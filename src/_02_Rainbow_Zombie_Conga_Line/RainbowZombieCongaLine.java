@@ -72,6 +72,7 @@ public class RainbowZombieCongaLine {
     	else {
     		next.setPrev(mid);
     	}
+ 
     }
 
     /*
@@ -79,7 +80,25 @@ public class RainbowZombieCongaLine {
      * the conga line!
      */
     public void everyoneOut(Zombie dancer) {
-    	Node<Zombie> color = new Node<Zombie>(dancer);
+    	//Node<Zombie> color = new Node<Zombie>(dancer);
+    	Node<Zombie> head = congaLine.getHead();
+    	Node<Zombie> after = congaLine.getHead().getNext();
+    	ZombieHatColor colorToRemove = dancer.getZombieHatColor();
+    	for(int i = 0; i < congaLine.size(); i++) {
+    		if(colorToRemove == head.getValue().getZombieHatColor()) {
+    			after = after.getNext();
+    			head.setNext(after);
+    			if(after!=null) {
+    				after.setPrev(head);
+    			}
+    				
+    			
+    		}
+    		else {
+    			head = head.getNext();
+    			after = after.getNext();
+    		}
+    	}
     	
     }
 
@@ -88,7 +107,25 @@ public class RainbowZombieCongaLine {
      * from the conga line!
      */
     public void youAreDone(Zombie dancer) {
-
+    	ZombieHatColor colorToRemove = dancer.getZombieHatColor();
+    	Node<Zombie> inputZom = new Node<Zombie>(dancer);
+    	Node<Zombie> head = congaLine.getHead();
+    	Node<Zombie> after = congaLine.getHead().getNext();
+    	for(int i = 0; i < congaLine.size(); i++) {
+    		if(colorToRemove == head.getNext().getValue().getZombieHatColor()) {
+    			after = after.getNext();
+    			head.setNext(after);
+    			if(after!=null) {
+    			after.setNext(head);
+    			}
+    			break;
+    		}
+    		else {
+    			head = head.getNext();
+    			after = after.getNext();
+    	}
+    	}
+    		
     }
 
     /*
@@ -96,7 +133,11 @@ public class RainbowZombieCongaLine {
      * add one to the front, one to the end and one in the middle.
      */
     public void brains(Zombie dancer) {
-
+    	Node<Zombie> inputZome = new Node<Zombie>(dancer);
+    	Node<Zombie> zombieOne = new Node<Zombie>(dancer);
+    	Node
+    	ZombieHatColor inputZombieColor = dancer.getZombieHatColor();
+    	
     }
 
     /*
