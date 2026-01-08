@@ -36,6 +36,9 @@ public class RainbowZombieCongaLine {
     	Node<Zombie> next = congaLine.getHead();
     	Node<Zombie> first = new Node<Zombie>(dancer);
     	congaLine.setHead(first);
+    	if(congaLine.size()==1) {
+    		congaLine.setTail(first);
+    	}
     	first.setNext(next);
     	if(next!=null) {
     		next.setPrev(first);
@@ -47,12 +50,12 @@ public class RainbowZombieCongaLine {
     public void caboose(Zombie dancer) {
     	Node<Zombie> prev = congaLine.getTail();
     	Node<Zombie> last = new Node<Zombie>(dancer);
-    	congaLine.setTail(last);
+    
     	last.setPrev(prev);
     	if(prev!=null) {
     		prev.setNext(last);
     	}
-
+	congaLine.setTail(last);
     }
 
     // Place the zombie at the designated position in the conga line!
@@ -150,7 +153,22 @@ public class RainbowZombieCongaLine {
      */
     public void rainbowBrains(Zombie dancer) {
     	engine(dancer);
-    	Zombie zombieRed = new Zombie(R);
+    	
+    	Zombie zombieRed = new Zombie(ZombieHatColor.R);
+    	Zombie zombieOrange = new Zombie(ZombieHatColor.O);
+    	Zombie zombieYellow = new Zombie(ZombieHatColor.Y);
+    	Zombie zombieGreen = new Zombie(ZombieHatColor.G);
+    	Zombie zombieBlue = new Zombie(ZombieHatColor.B);
+    	Zombie zombieIndigo = new Zombie(ZombieHatColor.I);
+    	Zombie zombieViolet = new Zombie(ZombieHatColor.V);
+    	
+    	caboose(zombieRed);
+    	caboose(zombieOrange);
+    	caboose(zombieYellow);
+    	caboose(zombieGreen);
+    	caboose(zombieBlue);
+    	caboose(zombieIndigo);
+    	caboose(zombieViolet);
 
     }
 
