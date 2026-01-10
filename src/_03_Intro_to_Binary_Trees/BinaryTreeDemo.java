@@ -33,7 +33,9 @@ public class BinaryTreeDemo {
      */
 
     public static void main(String[] args) {
-
+    	BinaryTree bitree = new BinaryTree();
+    	bitree.insert(50);
+    	bitre
     }
 
 }

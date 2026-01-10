@@ -51,10 +51,11 @@ public class RainbowZombieCongaLine {
     	Node<Zombie> prev = congaLine.getTail();
     	Node<Zombie> last = new Node<Zombie>(dancer);
     
-    	last.setPrev(prev);
-    	if(prev!=null) {
+    	
+    	//if(prev!=null) {
     		prev.setNext(last);
-    	}
+    	//}
+    	last.setPrev(prev);
 	congaLine.setTail(last);
     }
 
@@ -139,9 +140,11 @@ public class RainbowZombieCongaLine {
      * add one to the front, one to the end and one in the middle.
      */
     public void brains(Zombie dancer) {
-    	engine(dancer);
+    	Zombie zombie1 = new Zombie(dancer.getZombieHatColor());
+    	Zombie zombieFront = new Zombie(dancer.getZombieHatColor());
+    	engine(zombieFront);
     	caboose(dancer);
-    	jumpInTheLine(dancer,congaLine.size()/2);
+    	jumpInTheLine(zombie1,congaLine.size()/2);
     	
     	
     	

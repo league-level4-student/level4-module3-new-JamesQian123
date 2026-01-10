@@ -55,7 +55,7 @@ public class RainbowZombieDanceParty {
             } else {
                 continue;
             }
-
+            randomAction = ZombieAction.RAINBOW_BRAINS.ordinal();
             System.out.print("Action: " + zombieActions[randomAction]);
             System.out.print(" | " + "Hat Color: " + hatColors[randomColor]);
 
