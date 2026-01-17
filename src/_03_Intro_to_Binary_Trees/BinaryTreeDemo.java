@@ -34,8 +34,11 @@ public class BinaryTreeDemo {
 
     public static void main(String[] args) {
     	BinaryTree bitree = new BinaryTree();
+    	
     	bitree.insert(50);
-    	bitre
+    	bitree.insert(60);
+    	bitree.insert(70);
+    	bitree.recursiveDelete(null, null);
     }
 
 }

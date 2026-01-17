@@ -36,10 +36,11 @@ public class RainbowZombieCongaLine {
     	Node<Zombie> next = congaLine.getHead();
     	Node<Zombie> first = new Node<Zombie>(dancer);
     	congaLine.setHead(first);
+    	first.setNext(next);
     	if(congaLine.size()==1) {
     		congaLine.setTail(first);
     	}
-    	first.setNext(next);
+    	
     	if(next!=null) {
     		next.setPrev(first);
     	}
