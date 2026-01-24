@@ -1,5 +1,7 @@
 package _06_How_Many_Are_Smaller_Than_Me;
 
+import java.util.ArrayList;
+
 import _00_Intro_to_Linked_Lists.Node;
 import _05_Intro_to_AVL_Trees.AVLNode;
 import _05_Intro_to_AVL_Trees.AVLTree;
@@ -14,37 +16,57 @@ public class HowManyAreSmallerThanMe {
      * You may want to create a helper method to search through the AVLTree and
      * count iteratively or recursively.
      */
-
+	int counter = 0;
     public int howManyAreSmallerThanMe(AVLTree<Integer> avlTree, int me) {
     	
-    	
-        return 0;
+    	countLessThanNum(avlTree.getRoot(), me);
+        return counter;
 
     }
-    public static Node<Integer> recursiveSearch(AVLTree<Integer> avlTree, int me) {
-    	boolean tester = true;
-    	int counter = 0;
-    	AVLNode<Integer> currentLeft = avlTree.getRoot().getLeft();
-    	AVLNode<Integer> currentRight = avlTree.getRoot().getRight();
-    	for(int i = 0; i< avlTree.)
-    	if(currentLeft.getValue() > me) {
-			//do this
-    		counter++;
-    		
+    
+	private void countLessThanNum(AVLNode<Integer> node, int me) {
+		// TODO Auto-generated method stub
+		if(node.getValue() < me) {
+			counter++;
 		}
-		else if(avlTree.getRoot().getRight().getValue() < me) {
-			//do this
+		if(node.getLeft() != null) {
+			countLessThanNum(node.getLeft(), me);
 		}
-    	while(tester) {
-    		if(avlTree.getRoot().getLeft().getValue() > me) {
-    			//do this
-    		}
-    		else if(avlTree.getRoot().getRight().getValue() < me) {
-    			//do this
-    		}
-    	}
-		return null;
-    	
-    }
+		if(node.getRight() != null) {
+			countLessThanNum(node.getRight(), me);
+		}
+	
+		
+		
+	}
+//    public static Node<Integer> recursiveSearch(AVLTree<Integer> avlTree, int me, Node root) {
+//    	boolean tester = true;
+//    	int counter = 0;
+//    	AVLNode<Integer> currentLeft = avlTree.getRoot().getLeft();
+//    	AVLNode<Integer> currentRight = avlTree.getRoot().getRight();
+//    	ArrayList<Integer> amounts = new ArrayList();
+//    	
+//    	if(avlTree.getRoot().getValue() < me) {
+//    		currentRight = currentRight.getLeft();
+//    		if(currentRight.getValue() < me) {
+//    			
+//    		}
+//    	}
+//  
+//    		amounts.add(currentLeft.getValue());
+//    		if(currentLeft.getLeft().getValue() != null) {
+//    			currentLeft = currentLeft.getLeft();
+//    			
+//    		}
+//    		if(currentLeft.getLeft().getValue() == null) {
+//    			currentLeft = currentLeft.getRight();
+//    			
+//    		}
+//    		
+//		return null;
+//    	
+//    }
+
+
 
 }

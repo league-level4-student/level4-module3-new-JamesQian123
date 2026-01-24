@@ -34,13 +34,14 @@ public class HowManyAreSmallerThanMeTest {
             if(!nums.contains(randomNum)) {
                 nums.add(randomNum);
                 av.insert(randomNum);
+                av.printVertical();
             }
         }
         
-        av.printVertical();
+      //  av.printVertical();
         
         int me = nums.get(rand.nextInt(nums.size()));
-        
+        System.out.println("looking for " + me);
         assertEquals(findSmallest(me), hm.howManyAreSmallerThanMe(av, me) );
         
     }
